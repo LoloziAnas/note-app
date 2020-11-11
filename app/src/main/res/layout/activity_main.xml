@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_dark"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_myNotes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_12dp"
+        android:layout_marginTop="@dimen/_20dp"
+        android:layout_marginEnd="@dimen/_20dp"
+        android:layout_marginLeft="@dimen/_12dp"
+        android:layout_marginRight="@dimen/_20dp"
+        android:fontFamily="@font/ubuntu_bold"
+        android:includeFontPadding="false"
+        android:text="@string/my_notes"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_20sp"
+        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:id="@+id/searchLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8dp"
+        android:layout_marginEnd="@dimen/_8dp"
+        android:layout_marginTop="@dimen/_15dp"
+        android:background="@color/primary"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/tv_myNotes" >
+        <ImageView
+            android:layout_width="@dimen/_20dp"
+            android:layout_height="@dimen/_20dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_search"
+            android:layout_marginLeft="@dimen/_12dp"
+            app:tint="@color/icons"
+            android:layout_marginStart="@dimen/_12dp" />
+
+        <EditText
+            android:id="@+id/edt_search_note"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35dp"
+            android:layout_marginStart="@dimen/_12dp"
+            android:layout_marginEnd="@dimen/_12dp"
+            android:background="@null"
+            android:fontFamily="@font/ubuntu"
+            android:hint="@string/search_notes"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:includeFontPadding="false"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:textColorHint="@color/secondary_text"
+            android:textSize="@dimen/_13sp"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:clipToPadding="false"
+        android:paddingStart="0dp"
+        android:paddingEnd="@dimen/_12dp"
+        android:paddingBottom="@dimen/_12dp"
+        app:layout_constraintBottom_toTopOf="@id/Layout_quick_actions"
+        app:layout_constraintTop_toBottomOf="@id/searchLayout"
+        android:paddingLeft="0dp"
+        android:paddingRight="@dimen/_12dp" />
+
+    <LinearLayout
+        android:id="@+id/Layout_quick_actions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/secondary_text"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/_15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+        <ImageView
+            android:id="@+id/imv_add"
+            android:layout_width="@dimen/_23sp"
+            android:layout_height="@dimen/_23sp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_add_c"
+            app:tint="@color/icons" />
+        <ImageView
+            android:id="@+id/imv_image"
+            android:layout_width="@dimen/_23sp"
+            android:layout_height="@dimen/_23sp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_image"
+            app:tint="@color/icons" />
+        <ImageView
+            android:id="@+id/imv_language"
+            android:layout_width="@dimen/_23sp"
+            android:layout_height="@dimen/_23sp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_languag"
+            app:tint="@color/icons" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imv_main_add"
+        android:layout_width="@dimen/_40dp"
+        android:layout_height="@dimen/_40dp"
+        android:layout_marginEnd="@dimen/_30dp"
+        android:layout_marginRight="@dimen/_30dp"
+        android:background="@drawable/bgd_add_button"
+        android:contentDescription="@string/app_name"
+        android:padding="@dimen/_5dp"
+        android:src="@drawable/ic_add"
+        app:layout_constraintBottom_toTopOf="@+id/Layout_quick_actions"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/Layout_quick_actions"
+        app:tint="@color/primary_dark" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
