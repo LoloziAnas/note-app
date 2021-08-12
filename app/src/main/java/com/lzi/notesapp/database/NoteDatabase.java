@@ -1,13 +1,12 @@
-package com.lzi.notesapp;
+package com.lzi.notesapp.database;
 
 import android.content.Context;
-
-import androidx.annotation.NonNull;
 import androidx.room.Database;
-import androidx.room.DatabaseConfiguration;
-import androidx.room.InvalidationTracker;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+
+import com.lzi.notesapp.dao.NoteDao;
+import com.lzi.notesapp.models.Note;
 
 @Database(entities = Note.class, version = 1, exportSchema = false)
 abstract class NotesDatabase extends RoomDatabase {

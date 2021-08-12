@@ -1,4 +1,4 @@
-package com.lzi.notesapp;
+package com.lzi.notesapp.models;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
